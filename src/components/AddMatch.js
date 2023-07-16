@@ -1,30 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function AddMatch() {
 
-
+/*
     const onSubmit =()=>{
         console.log('test here');
     }
 
 
-    const OnChangeTeamOne =(data)=>{
-        console.log(data);
-    }
+*/
 
-    const OnChangeTeamTwo =(data)=>{
-        console.log(data);
-    }
 
-    const OnChangeScoreOne =(data)=>{
-        console.log(data);
-    }
+const [teamOne, setTeamOne]=useState("")
+const [teamTwo, setTeamTwo]=useState("")
+const [scoreOne, setScoreOne]=useState("")
+const [scoreTwo, setScoreTwo]=useState("")
 
-    const OnChangeScoreTwo =(data)=>{
-        console.log(data);
-    }
+const onSubmit =()=>{
+   let data={
+    teamOne:teamOne,
+    teamTwo:teamTwo,
+    scoreOne:scoreOne,
+    scoreTwo:scoreTwo
+   }
 
-    return (
+   console.log(data)
+}
+
+
+
+
+
+return (
     <div>
   <div className="hero overlay" style={{backgroundImage: 'url("assets/images/bg_3.jpg")'}}>
     <div className="container">
@@ -42,23 +49,23 @@ export default function AddMatch() {
           <form action="#">
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Team One"
-              onChange={(event)=>OnChangeTeamOne(event.target.value)}
+              onChange={(e)=>setTeamOne(e.target.value)}
               />
             </div>
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Team Two"
-              onChange={(event)=>OnChangeTeamTwo(event.target.value)}
+              onChange={(e)=>setTeamTwo(e.target.value)}
               />
             </div>
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Score One" 
-              onChange={(event)=>OnChangeScoreOne(event.target.value)}
+             onChange={(e)=>setScoreOne(e.target.value)}
               />
               
             </div>
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Score Two" 
-              onChange={(event)=>OnChangeScoreTwo(event.target.value)}
+               onChange={(e)=>setScoreTwo(e.target.value)}
               />
             </div>
             <div className="form-group">
