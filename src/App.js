@@ -7,6 +7,7 @@ import SignUp from './components/SignUp';
 import Contact from './components/Contact';
 import AddMatch from './components/AddMatch';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TableMatch from './components/TableMatch';
 function App() {
   return (
     <div>
@@ -18,6 +19,8 @@ function App() {
         <Route exact path="/signup" element={<SignUp />}/>
         <Route exact path="/login" element={<Login />}/>
         <Route exact path="/addMatch" element={<AddMatch />}/>
+        <Route exact path="/addMatch/:id" element={<AddMatch />}/>
+        <Route exact path="/tablematch" element={<TableMatch />}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

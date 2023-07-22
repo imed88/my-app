@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React,{useEffect, useState} from 'react'
+import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function AddMatch() {
-
 /*
     const onSubmit =()=>{
         console.log('test here');
     }
-
-
 */
 
 
@@ -15,6 +14,9 @@ const [teamOne, setTeamOne]=useState("")
 const [teamTwo, setTeamTwo]=useState("")
 const [scoreOne, setScoreOne]=useState("")
 const [scoreTwo, setScoreTwo]=useState("")
+
+const navigate = useNavigate()
+
 
 const onSubmit =()=>{
    let data={
@@ -25,7 +27,15 @@ const onSubmit =()=>{
    }
 
    console.log(data)
+
+   axios.post("http://localhost:4000/api/add-match",data).then((res)=>{
+    console.log(res.data.message)
+    navigate('/tablematch')
+   })
 }
+
+
+
 
 
 
